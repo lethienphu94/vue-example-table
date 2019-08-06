@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap 4 Website Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<style>
+    #wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background: #E5E5E5;
+    }
+
+    .sidebar {
+        width: 6.5rem;
+        min-height: 100vh;
+        background: #363740;
+        text-align: center;
+    }
+
+    .sidebar a {
+        color: #A4A6B3;
+        font-family: Muli;
+        font-style: normal;
+    }
+
+    .sidebar .sidebar-brand {
+        font-weight: bold;
+        height: 4.375rem;
+        /* text-decoration: none; */
+        font-size: 19px;
+        line-height: 24px;
+        /* padding: 1.5rem 1rem; */
+        text-align: center;
+        letter-spacing: 0.4px;
+        z-index: 1;
+        margin-bottom: 55px;
+        padding-top: 35px;
+    }
+
+    .sidebar .sidebar-brand .sidebar-brand-icon {
+        background: linear-gradient(139.4deg, rgba(255, 255, 255, 0.7) 0%, #FFFFFF 100%);
+    }
+
+    .sidebar .sidebar-brand .sidebar-brand-icon {
+        /* font-size: 2rem; */
+        background: #3751FF;
+        width: 32px;
+        height: 32px;
+        -moz-border-radius: 16px;
+        -webkit-border-radius: 16px;
+        --border-radius: 16px;
+        border-radius: 16px;
+        padding-top: 9px;
+        padding-left: 11px;
+    }
+
+    .sidebar .sidebar-brand .sidebar-brand-text {
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 24px;
+
+        letter-spacing: 0.4px;
+        color: #A4A6B3;
+        opacity: 0.7;
+    }
+
+    .sidebar .sidebar-brand .sidebar-brand-icon .icon {
+        width: 12px;
+        height: 14px;
+        border-bottom-right-radius: 6px;
+        border-top-right-radius: 6px;
+        background: linear-gradient(139.4deg, rgba(255, 255, 255, 0.7) 0%, #FFFFFF 100%);
+    }
+
+    .nav-item {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+
+    }
+
+    .sidebar .nav-item .nav-link {
+        text-align: left;
+
+        /* width: 255px; */
+        height: 56px;
+    }
+
+    .sidebar .nav-item.active,
+    .sidebar .nav-item:hover {
+        background: #3e3f49;
+        border-left: 3px solid #DDE2FF
+    }
+
+    .sidebar .nav-item .nav-link {
+        text-align: center;
+    }
+
+    .sidebar .nav-item .nav-link i {
+        /* margin-right: 24px; */
+        color: #9FA2B4;
+        /* opacity: 0.4; */
+    }
+
+    .sidebar .nav-item .nav-link span {
+        display: block;
+    }
+
+    .sidebar .nav-item.active .nav-link {
+        color: #DDE2FF
+            /* opacity: 0.4; */
+    }
+
+    .sidebar .nav-item.active .nav-link i {
+        color: #DDE2FF
+    }
+
+    .sidebar-divider {
+        border: 0;
+        border-top: 1px solid #A4A6B3;
+        margin: 1.5rem 0px;
+        opacity: 0.1;
+    }
+
+    #wrapper #content-wrapper {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    #wrapper #content-wrapper #content {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+    }
+
+
+
+    .navbar {
+        color: #252733;
+    }
+
+    .navbar h3 {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0.3px;
+    }
+
+    .topbar .topbar-divider {
+        width: 0;
+        border-right: 1px solid #e3e6f0;
+        height: calc(4.375rem - 2rem);
+        margin: auto 1rem;
+    }
+
+    .topbar {
+        padding-top: 35px;
+        height: 4.375rem;
+        padding-bottom: 58px;
+    }
+
+    .img-profile {
+        height: 44px;
+        width: 44px;
+    }
+
+    .no-arrow .dropdown-toggle::after {
+        display: none;
+    }
+
+    .name-profile {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: right;
+        letter-spacing: 0.2px;
+        color: #252733;
+    }
+
+    .topbar .topbar-divider {
+        width: 0;
+        border-right: 1px solid #cbceef;
+        left: calc(50% - 0px/2);
+        top: 0px;
+        bottom: 0px;
+        height: 32px;
+    }
+
+    .topbar .fa-fw {
+        margin-top: 15px;
+        color: #C5C7CD;
+        height: 16px;
+        width: 16px
+    }
+
+    .navbar-search .input-group {
+        min-width: 250px !important;
+    }
+
+    .new-alert {
+        margin-left: 10px;
+        margin-top: -20px;
+        width: 6px;
+        height: 6px;
+        background: #3751FF;
+        border-radius: 16px;
+        position: absolute;
+    }
+
+
+    @media (min-width:768px) {
+        .sidebar {
+            width: 255px !important;
+            text-align: center;
+        }
+
+        .sidebar .nav-item .nav-link {
+            text-align: left;
+            padding-left: 30px;
+            padding-top: 15px;
+        }
+
+        .sidebar .nav-item .nav-link i {
+            margin-right: 24px;
+        }
+
+        .sidebar .nav-item .nav-link span {
+            display: inline;
+        }
+    }
+</style>
+
+<body>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon">
+                    <div class="icon"></div>
+                </div>
+                <div class="d-none d-md-block sidebar-brand-text mx-2"><span>Dashboard Kit</span></div>
+            </a>
+            <!-- Nav Item -->
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Overview</span>
+                </a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="">
+                    <i class="fas fa-ticket-alt"></i>
+                    <span>Tickets</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand  static-top topbar">
+                    <h3 class="mb-2">Tickets</h3>
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <div class="new-alert"></div>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline small name-profile">Valerie Luna</span>
+                                <img class="img-profile rounded-circle"
+                                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>2011/04/25</td>
+                                            <td>$320,800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Garrett Winters</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>63</td>
+                                            <td>2011/07/25</td>
+                                            <td>$170,750</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
