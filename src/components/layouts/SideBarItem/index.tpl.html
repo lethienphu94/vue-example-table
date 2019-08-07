@@ -1,0 +1,21 @@
+<ul>
+    <router-link to="/" tag="li" class="nav-item" exact>
+        <a class="nav-link">
+            <font-awesome-icon :icon="faChartPie" />
+            <span>Overview</span>
+        </a>
+    </router-link>
+    <router-link to="/tickets" tag="li" class="nav-item" active>
+        <a class="nav-link">
+            <font-awesome-icon :icon="faTicketAlt" />
+            <span>Tickets</span>
+        </a>
+    </router-link>
+    <hr class="sidebar-divider">
+    <router-link to="/settings" tag="li" class="nav-item" active>
+        <a class="nav-link">
+            <font-awesome-icon :icon="faCog" />
+            <span>Settings</span>
+        </a>
+    </router-link>
+</ul>
