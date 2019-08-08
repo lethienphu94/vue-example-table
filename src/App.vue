@@ -1,23 +1,29 @@
 <template>
   <div id="app">
     <SideBar />
-    <router-view />
+    <div id="content-wrapper" class="d-flex flex-column">
+      <TopBar />
+      <div class="container-fluid">
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import SideBar from "@/components/layouts/SideBar/index.vue";
-
+import TopBar from "@/components/layouts/TopBar/index.vue";
 export default {
   name: "app",
   components: {
-    SideBar
+    SideBar,
+    TopBar
   }
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url("https://fonts.googleapis.com/css?family=Muli");
 #app {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,5 +31,9 @@ export default {
   background: #e5e5e5;
   font-family: Muli;
   font-style: normal;
+}
+#content-wrapper {
+  width: 100%;
+  overflow-x: hidden;
 }
 </style>

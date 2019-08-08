@@ -1,0 +1,13 @@
+<div class="topbar">
+    <b-navbar toggleable="lg" class="navbar-expand static-top">
+        <b-navbar-brand href="#">{{currentRouteName}}</b-navbar-brand>
+        <b-collapse id="nav-collapse" is-nav>
+            <b-navbar-nav class="ml-auto">
+                <TopBarSearch />
+                <TopBarAlert />
+                <div class="topbar-divider d-none d-sm-block"></div>
+                <TopBarUser />
+            </b-navbar-nav>
+        </b-collapse>
+    </b-navbar>
+</div>

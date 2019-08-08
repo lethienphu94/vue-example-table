@@ -1,0 +1,23 @@
+.navbar {
+    color: #252733;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-bottom: 58px;
+    .navbar-brand{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0.3px;
+    }
+    .topbar-divider {
+        width: 0;
+        border-right: 1px solid #cbceef;
+        left: calc(50% - 0px/2);
+        top: 0px;
+        bottom: 0px;
+        height: 32px;
+        margin: 0px 32px;
+        margin-top: 15px;
+    }    
+}
+

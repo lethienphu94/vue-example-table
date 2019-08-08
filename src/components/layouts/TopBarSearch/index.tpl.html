@@ -1,0 +1,16 @@
+<b-nav-item-dropdown right no-caret class="topbar-search">
+    <template slot="button-content">
+        <font-awesome-icon :icon="faSearch" class="fa-fw" />
+    </template>
+    <form class="form-inline mr-auto w-100 navbar-search">
+        <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                    <font-awesome-icon :icon="faSearch" class="fa-sm" />
+                </button>
+            </div>
+        </div>
+    </form>
+</b-nav-item-dropdown>
